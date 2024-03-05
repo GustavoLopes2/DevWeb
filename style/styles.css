@@ -1,7 +1,21 @@
-.container {
+@import url(variable.css);
+
+.container-meu {
 	border: 1px solid black;
 	margin: 40px;
 	background-color: grey;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #eee;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
 }
 /*
 body {
@@ -33,9 +47,6 @@ body {
     background-color: #003366;
     color: white;
     padding: 20px 0;
-    a {
-        color: red;
-    }
 } 
 
 .main-navigation ul {
@@ -53,23 +64,23 @@ body {
     padding: 0 15px;
 }
 
-.container-dois {
+.container {
     max-width: 1200px;
     padding: 0 20px;
     margin: auto;
 }
 
 .profile-pic {
-    max-width: 400px;
-    border-radius: 50%;
-    min-width: 150px;
     float: left;
-    margin-right: 15px;
-
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
 }
 
-.eu {
-    padding: 5px 15px;
+.section {
+    padding: 50px 0;
 }
 
 
@@ -79,7 +90,7 @@ body {
     display: table;
 }
 
-.project-grid {
+.projects-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -95,4 +106,46 @@ body {
     height: 200px;
     object-fit: contain;
     border-bottom: 3px solid #3333;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info a {
+    display: inline-block;
+    background-color: #5d547a;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.contact-info a:hover {
+    background-color: #4b4171;
+}
+
+@media screen and (width: 768px) {
+    .main-navigation ul {
+        flex-direction: column;
+    }
+    .main-navigation li {
+        margin-bottom: 10px;
+        font-size: large;
+    }
+    .profile-pic {
+        float: none;
+        display:block;
+        margin: 0 auto;
+    }
+}
+@keyframes fadein {
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
