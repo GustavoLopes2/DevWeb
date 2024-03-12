@@ -21,6 +21,7 @@ header {
     padding: 1em 0;
     z-index: 1000;
     transition: background-color 0.3s ease-in-out;
+    padding: 5px;
 }
 
 nav {
@@ -251,7 +252,7 @@ header p {
 }
 
 .contact-info {
-    margin-top: 20px;
+    margin-top: center;
 }
 
 .contact-info a {
