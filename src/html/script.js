@@ -21,6 +21,16 @@ function switchTheme() {
     }    
 }
 
+function copyToClipboard(text) {
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute("value", text);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    alert("Link copiado: " + text);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const currentTheme = localStorage.getItem('theme');
 

@@ -193,7 +193,7 @@ footer.site-footer {
 [data-theme="dark"] {
     --text-color: #ffffff;
     --background-color: #2b2b2b;
-    --primary-color: #2b2b2b; /* Fundo preto para cabeçalho e rodapé */
+    --primary-color: #2b2b2b;
     --background-color-secondary: #1c1c1c;
     --sidebar-color: #000000;
     --header-color: #131313;
@@ -204,7 +204,7 @@ footer.site-footer {
 [data-theme="light"] {
     --text-color: #000000;
     --background-color: #e0dddd;
-    --primary-color: #e0dddd; /* Fundo cinza claro para cabeçalho e rodapé */
+    --primary-color: #e0dddd;
     --background-color-secondary: #e0dddd;
     --sidebar-color: #8f8e8e;
     --header-color: #b3b3b3;
