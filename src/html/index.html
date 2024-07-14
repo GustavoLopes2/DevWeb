@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Frank Willian Cardoso de Oliveira, um desenvolvedor web especializado em [suas especialidades]. Confira meus projetos, formação e como entrar em contato.">
+    <meta name="keywords" content="desenvolvedor web, portfólio, projetos web, formação em programação">
+    <meta name="author" content="Frank Willian Cardoso de Oliveira">
+    <title>Portfólio de Frank Willian Cardoso de Oliveira</title>
+    <link href="../style/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <button class="toggle-button" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="#sobre-mim" onclick="closeSidebar()">Sobre Mim</a></li>
+                <li><a href="#projetos" onclick="closeSidebar()">Projetos</a></li>
+                <li><a href="#formacao" onclick="closeSidebar()">Formação</a></li>
+                <li><a href="#contato" onclick="closeSidebar()">Contato</a></li>
+                <li><a href="repositorio.html" onclick="closeSidebar()">Repositório Git</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+    <main class="container">
+        <button class="theme-switch" onclick="switchTheme()"></button>
+        <section id="sobre-mim" class="section clearfix">
+            <img src="../img/literalmenteEu.PNG" alt="literalmente eu" class="profile-pic">
+            <h1>Sobre Eu</h1>
+            <p>Olá, mim ser uou, talvez minha descrição não seja grande o suficiente por isso não está tendo a quebra de linha mas vamos testar isso aí né fazer o que</p>
+        </section>
+
+        <section id="projetos" class="section">
+            <h2>Projetos Desenvolvidos</h2>
+            <div class="projects-grid">
+                <article class="project-item">
+                    <img src="../img/eclipse.jpg" />
+                    <div class="project-info">
+                        <h3>Projeto xesquedele</h3>
+                        <p>Descrição do eclipse: Explica o eclipse? Man, o eclipse é... ele meio que te engana sabe</p>
+                    </div>
+                </article>
+                <article class="project-item">
+                    <img src="../img/eclipse.jpg" alt="Descrição do projeto">
+                    <div class="project-info">
+                        <h3>Loja Virtual</h3>
+                        <p>Descrição do projeto...</p>
+                    </div>
+                </article>
+                <article class="project-item">
+                    <img src="../img/eclipse.jpg" alt="Descrição do projeto">
+                    <div class="project-info">
+                        <h3>Jogo Mobile</h3>
+                        <p>Descrição do projeto...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="formacao" class="section">
+            <h2>Formação/Cursos</h2>
+            <ul>
+                <li>Bacharelado em Sistemas de Informação</li>
+                <li>Especialização em Desenvolvimento Web</li>
+                <li>Mestrado em Desenvolvimento de Tecnologia</li>
+            </ul>
+        </section>
+
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <div class="contact-info">
+                <a href="https://instagram.com/gustavolopesf23" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:gustavolopesfeitosa1707@gmail.com">E-mail</a>
+                <a href="https://wa.me/5544997475638" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Frank W. C. de Oliveira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
