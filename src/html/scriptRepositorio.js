@@ -23,10 +23,6 @@ async function consultarRepositorios() {
     try {
         const resposta = await fetch(url);
 
-        /*resposta.then(res=>{
-            console.log(res);
-        });*/
-
         if (!resposta.ok) {
             alert("Erro ao realizar a consulta");
             return;
