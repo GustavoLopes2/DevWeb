@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, 
-    initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="" href="../style/styleRepositorios.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Repositórios</title>
+    <link rel="stylesheet" type="text/css" href="../style/styleRepositorios.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Consulta de Repositórios</h1>
-        <input type="text" id="inputNomeUsuario"
-            placeholder="Informe o Nome do Usuário"/>
-        <button onclick="consultarRepositorios()">
-            Consultar Repositórios
-        </button>   
-        <span id="status"></span> 
-        <ul id="listaRepositorios">
-        </ul>
+    <div class="top-bar">
+        <a href="../html/index.html">Voltar para o Início</a>
     </div>
-   
-<script src="scriptRepositorio.js"></script>
+
+    <div class="container" id="inicio">
+        <h1>Consulta de Repositórios</h1>
+        <input type="text" id="inputNomeUsuario" placeholder="Informe o Nome do Usuário" />
+        <button onclick="consultarRepositorios()">Consultar Repositórios</button>
+        <span id="status"></span>
+        <ul id="listaRepositorios"></ul>
+    </div>
+
+    <script src="scriptRepositorio.js"></script>
 </body>
+
 </html>

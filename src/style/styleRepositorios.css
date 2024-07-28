@@ -59,3 +59,34 @@ li {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.top-bar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.top-bar a:hover {
+    color: var(--header-hover-color);
+}
+
+body {
+    padding-top: 50px;
+}

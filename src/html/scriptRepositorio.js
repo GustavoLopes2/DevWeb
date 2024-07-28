@@ -19,7 +19,7 @@ async function consultarRepositorios() {
         `https://api.github.com/users/${nomeUsuario}/repos`;
 
     status.innerText = "Carregando...";
-    
+
     try {
         const resposta = await fetch(url);
 
