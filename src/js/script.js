@@ -66,19 +66,15 @@ function copyToClipboard(text) {
 const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_market_cap=true&include_24hr_high=true&include_24hr_low=true';
 
 async function fetchCryptoPrices() {
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
+    const response = await fetch(apiUrl);
+    const data = await response.json();
 
-        const cryptoList = document.getElementById('crypto-list');
+    const cryptoList = document.getElementById('crypto-list');
 
-        if (cryptoList) {
-            cryptoList.innerHTML = '';
-            for (const [id, info] of Object.entries(data)) {
-                cryptoList.innerHTML += `
+    if (cryptoList) {
+        cryptoList.innerHTML = '';
+        for (const [id, info] of Object.entries(data)) {
+            cryptoList.innerHTML += `
                     <li>
                         <h2>${id.charAt(0).toUpperCase() + id.slice(1)}</h2>
                         <p><strong>Preço Atual:</strong> $${info.usd}</p>
@@ -88,10 +84,7 @@ async function fetchCryptoPrices() {
                         <p><a href="https://www.coingecko.com/en/coins/${id}" target="_blank">Mais detalhes</a></p>
                     </li>
                 `;
-            }
         }
-    } catch (error) {
-        console.error('Error fetching crypto prices:', error);
     }
 }
 
@@ -99,37 +92,26 @@ fetchCryptoPrices();
 
 async function fetchArtistInfo() {
     const artistName = document.getElementById('artistName').value.trim();
-    if (!artistName) {
-        alert('Please enter an artist name');
-        return;
-    }
 
     const apiUrl = `https://musicbrainz.org/ws/2/artist/?query=${encodeURIComponent(artistName)}&fmt=json`;
 
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+    const response = await fetch(apiUrl);
+    const data = await response.json();
 
-        if (data.artists && data.artists.length > 0) {
-            const artist = data.artists[0];
-            const artistInfo = document.getElementById('artistInfo');
+    if (data.artists && data.artists.length > 0) {
+        const artist = data.artists[0];
+        const artistInfo = document.getElementById('artistInfo');
 
-            const tags = artist.tags.map(tag => tag.name).join(', ') || 'No tags available';
+        const tags = artist.tags.map(tag => tag.name).join(', ') || 'No tags available';
 
-            artistInfo.innerHTML = `
+        artistInfo.innerHTML = `
                 <h2>${artist.name}</h2>
-                <p><strong>Country:</strong> ${artist.country || 'Unknown'}</p>
-                <p><strong>Begin Area:</strong> ${artist['begin-area'] ? artist['begin-area'].name : 'Unknown'}</p>
-                <p><strong>Life Span:</strong> ${artist['life-span'].begin || 'Unknown'}</p>
+                <p><strong>País:</strong> ${artist.country || 'Desconhecido'}</p>
+                <p><strong>Área de Início:</strong> ${artist['begin-area'] ? artist['begin-area'].name : 'Desconhecido'}</p>
+                <p><strong>Período de Vida:</strong> ${artist['life-span'].begin || 'Desconhecido'}</p>
                 <p><strong>Tags:</strong> ${tags}</p>
-                <p><a href="https://musicbrainz.org/artist/${artist.id}" target="_blank">More details</a></p>
+                <p><a href="https://musicbrainz.org/artist/${artist.id}" target="_blank">Mais detalhes</a></p>
             `;
-        } else {
-            alert('Artist not found');
-        }
-    } catch (error) {
-        console.error('Error fetching artist info:', error);
-        alert('Error fetching artist info');
     }
 }
 
